@@ -1,0 +1,41 @@
+[runemal@runemal-inspiron5391 ~]$ python3
+Python 3.8.3 (default, May 17 2020, 18:15:42) 
+[GCC 10.1.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from email.message import EmailMessage
+>>> message = EmailMessage()
+>>> print(message)
+
+
+>>> sender = "me@example.com"
+>>> recipient = "you@example.com"
+>>> message['From'] = sender
+>>> message['To'] = recipient
+>>> print(message)
+From: me@example.com
+To: you@example.com
+
+
+>>> message['Subject'] = 'Greetings from {} to {}!'.format(sender, recipient)
+>>> print(message)
+From: me@example.com
+To: you@example.com
+Subject: Greetings from me@example.com to you@example.com!
+
+
+>>> body = """Hey there!
+... 
+... I'm learning to send emails using Python!"""
+>>> message.set_content(body)
+>>> print(message)
+From: me@example.com
+To: you@example.com
+Subject: Greetings from me@example.com to you@example.com!
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hey there!
+
+I'm learning to send emails using Python!
+
