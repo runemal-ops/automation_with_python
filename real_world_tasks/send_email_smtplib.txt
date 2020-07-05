@@ -1,0 +1,35 @@
+>>> import smtplib
+
+_____________________________________________________
+
+>>> mail_server = smtplib.SMTP('localhost')
+
+_____________________________________________________
+
+>>> mail_server = smtplib.SMTP_SSL('smtp.example.com')
+>>> mail_server.set_debuglevel(1)
+
+_____________________________________________________
+
+>>> import getpass
+>>> mail_pass = getpass.getpass('Password? ')
+Password?
+>>>
+
+______________________________________________________
+
+>>> print(mail_pass)
+It'sASecr3t!
+
+______________________________________________________
+
+>>> mail_server.login(sender, mail_pass)
+(235, b'2.7.0 Accepted')
+
+______________________________________________________
+
+>>> mail_server.send_message(message)
+{}
+
+______________________________________________________
+>>> mail_server.quit()
